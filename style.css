@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2d2b2b 0%, #000000 100%);
+    min-height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-section input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    transition: all 0.3s ease ease-in-out;
+}
+
+.search-section input:focus {
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.search-section button {
+    padding: 10px 20px;
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-section button:hover {
+    background-color: #666;
+}
+
+/* Flexbox Container */
+.forecast-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.day-forecast {
+    flex:1;
+    min-width: calc(14.28% - 15px);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Enhanced Hover Effects for Entire Div */
+.day-forecast:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Hover Effects for Individual Elements */
+.day-forecast h3 {
+    transition: all 0.3s ease;
+}
+
+.day-forecast:hover h3 {
+    color: #ffd700;
+    transform: translateY(-5px);
+}
+
+.day-forecast p {
+    transition: all 0.3s ease;
+}
+
+.day-forecast p:first-of-type {
+    font-size: 3em;
+    transition: transform 0.3s ease;
+}
+
+.day-forecast:hover p:first-of-type {
+    transform: scale(1.2);
+}
+
+.day-forecast p:nth-child(3) {
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.day-forecast:hover p:nth-child(3) {
+    color: #4a4a4a;
+    transform: scale(1.1);
+}
+
+.day-forecast p:last-child {
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.day-forecast:hover p:last-child {
+    opacity: 1;
+    color: #2c3e50;
+}
+
+
+.day-forecast::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.6s ease;
+}
+
+.day-forecast:hover::before {
+    left: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .day-forecast {
+        min-width: calc(33.33% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .day-forecast {
+        min-width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .day-forecast {
+        min-width: 100%;
+    }
+}
+.search-section {
+display: flex;
+justify-content: center;
+margin-bottom: 30px;
+}
+
+.search-section input {
+padding: 10px;
+width: 300px;
+border: none;
+border-radius: 25px; 
+margin-right: 10px;
+outline: none;
+transition: all 0.3s ease;
+box-shadow: 0 4px 6px rgba(0,0,0,0.6); 
+}
+
+.search-section input:focus {
+box-shadow: 0 6px 8px rgba(0,0,0,0.7);
+transform: scale(1.02);
+}
+
+.search-section button {
+padding: 10px 20px;
+background-color: #4a4a4a;
+color: white;
+border: none;
+border-radius: 25px;
+cursor: pointer;
+transition: all 0.3s ease;
+box-shadow: 0 4px 6px rgba(0,0,0,0.6); 
+} 
+
+.search-section button:hover {
+background-color: #666;
+transform: scale(1.1);
+box-shadow: 0 6px 8px rgba(0,0,0,0.7);
+}
