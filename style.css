@@ -7,7 +7,7 @@
 
 body {
     background: linear-gradient(135deg, #2d2b2b 0%, #000000 100%);
-    min-height: 100%;
+    min-height: 100vh;
     color: white;
     display: flex;
     justify-content: center;
@@ -63,7 +63,7 @@ body {
     background-color: #666;
 }
 
-/* Flexbox Container */
+
 .forecast-flex {
     display: flex;
     flex-wrap: wrap;
@@ -168,6 +168,7 @@ body {
         min-width: 100%;
     }
 }
+
 .search-section {
 display: flex;
 justify-content: center;
